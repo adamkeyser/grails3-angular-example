@@ -94,10 +94,13 @@ bower {
     source 'angular-route.js'
   }
 
+  'ui-router'('0.2.x')
+
   'angular'('1.5.x') {
     source 'angular.js'
     source 'angular-route.js'
     source 'angular-csp.css'
+    source 'angular-ui-router.js'
   }
 
 }

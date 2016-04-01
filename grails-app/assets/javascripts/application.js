@@ -11,6 +11,7 @@
 //= require ../bower/angular/angular.js
 //= require ../bower/angular-route/angular-route.js
 //= require ../bower/foo/bar.js
+//= require ../bower/ui-router/angular-ui-router.js
 //= require_self
 //= require_tree app
 

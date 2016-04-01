@@ -16,7 +16,6 @@ app.controller('mainController', function ($scope, $location, attendeeService) {
   $scope.deleteAttendee = function (id) {
     attendeeService.deleteAttendee(id)
   };
-
 });
 
 app.controller('aboutController', function ($scope) {
@@ -30,6 +29,7 @@ app.controller('contactController', function ($scope) {
 app.controller('manageUserController', function ($scope, $location, $routeParams, attendeeService) {
   $scope.attendee = {};
   $scope.mode = 'Add Attendee';
+
   if ('edit' == $routeParams.action) {
     $scope.mode = 'Edit Attendee';
     var id = $routeParams.id;
@@ -58,6 +58,4 @@ app.controller('manageUserController', function ($scope, $location, $routeParams
   $scope.return = function () {
     $location.path("/home");
   };
-
-
 });
