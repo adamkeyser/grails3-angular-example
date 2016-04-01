@@ -26,13 +26,13 @@ app.controller('contactController', function ($scope) {
   $scope.message = 'Contact Us';
 });
 
-app.controller('manageUserController', function ($scope, $location, $routeParams, attendeeService) {
+app.controller('manageUserController', function ($scope, $location, $state, $stateParams, attendeeService) {
   $scope.attendee = {};
-  $scope.mode = 'Add Attendee';
+  $scope.mode = 'Add';
 
-  if ('edit' == $routeParams.action) {
-    $scope.mode = 'Edit Attendee';
-    var id = $routeParams.id;
+  if ($stateParams.id) {
+    $scope.mode = 'Edit';
+    var id = $stateParams.id;
     var attendees = attendeeService.getAttendees();
     for (i = 0; i < attendees.length; i++) {
       if (attendees[i].id == id) {
@@ -49,7 +49,7 @@ app.controller('manageUserController', function ($scope, $location, $routeParams
         attendeeService.addAttendee($scope.attendee);
       }
       attendeeService.attendee = {};
-      $location.path("/home");
+      $state.go("home.list")
     }
   };
 
@@ -59,3 +59,4 @@ app.controller('manageUserController', function ($scope, $location, $routeParams
     $location.path("/home");
   };
 });
+

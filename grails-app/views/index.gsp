@@ -23,7 +23,7 @@
     </div>
   </nav>
 
-  <div ng-view></div>
+  <div ui-view></div>
 
   <footer class="jumbotron text-center">
     <p>Footer Content</p>

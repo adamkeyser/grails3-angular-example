@@ -9,8 +9,6 @@
 //= require jquery-2.1.3.js
 //= require ../bower/bootstrap/bootstrap.js
 //= require ../bower/angular/angular.js
-//= require ../bower/angular-route/angular-route.js
-//= require ../bower/foo/bar.js
 //= require ../bower/ui-router/angular-ui-router.js
 //= require_self
 //= require_tree app
@@ -25,18 +23,18 @@ if (typeof jQuery !== 'undefined') {
   })(jQuery);
 }
 
-var app = angular.module('app', ["ngRoute"]);
-
-app.run(['$route', '$rootScope', '$location', function ($route, $rootScope, $location) {
-    var original = $location.path;
-    $location.path = function (path, reload) {
-        if (reload === false) {
-            var lastRoute = $route.current;
-            var un = $rootScope.$on('$locationChangeSuccess', function () {
-                $route.current = lastRoute;
-                un();
-            });
-        }
-        return original.apply($location, [path]);
-    };
-}]);
+var app = angular.module('app', ['ui.router']);
+//
+//app.run([$rootScope', '$location', function ($rootScope, $location) {
+//    var original = $location.path;
+//    $location.path = function (path, reload) {
+//        if (reload === false) {
+//            var lastRoute = $route.current;
+//            var un = $rootScope.$on('$locationChangeSuccess', function () {
+//                $route.current = lastRoute;
+//                un();
+//            });
+//        }
+//        return original.apply($location, [path]);
+//    };
+//}]);
