@@ -9,9 +9,14 @@ app.controller('mainController', function ($scope, $location, attendeeService) {
   $scope.message = 'Default Routed Page (Home)';
   $scope.toggle = true;
   $scope.attendees = attendeeService.getAttendees();
-  $scope.manageUserPage = function() {
+  $scope.manageUserPage = function () {
     $location.path("/manageUser");
-  }
+  };
+
+  $scope.deleteAttendee = function (id) {
+    attendeeService.deleteAttendee(id)
+  };
+
 });
 
 app.controller('aboutController', function ($scope) {
@@ -36,21 +41,21 @@ app.controller('manageUserController', function ($scope, $location, $routeParams
     }
   }
 
-  $scope.saveCurrentAttendee = function() {
+  $scope.saveCurrentAttendee = function () {
     if ($scope.attendee.first && $scope.attendee.last) {
       if ($scope.attendee.id) {
         attendeeService.updateAttendee($scope.attendee);
       } else {
         attendeeService.addAttendee($scope.attendee);
       }
-      attendeeService.addAttendee($scope.attendee);
       attendeeService.attendee = {};
+      $location.path("/home");
     }
   };
 
   $scope.message = 'Wire up controller in html (Not really good practice)';
 
-  $scope.return = function() {
+  $scope.return = function () {
     $location.path("/home");
   };
 

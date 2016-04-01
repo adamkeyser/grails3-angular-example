@@ -23,8 +23,18 @@ app.service('attendeeService', function () {
     return attendees;
   };
 
+  var deleteAttendee = function (id) {
+    for (i = 0; i < attendees.length; i++) {
+      if (id == attendees[i].id) {
+        attendees.splice(i, 1);
+      }
+    }
+  };
+
   return {
     addAttendee: addAttendee,
-    getAttendees: getAttendees
+    getAttendees: getAttendees,
+    updateAttendee: updateAttendee,
+    deleteAttendee: deleteAttendee
   };
 });
