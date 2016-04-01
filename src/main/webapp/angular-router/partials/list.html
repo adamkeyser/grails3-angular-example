@@ -7,7 +7,8 @@
             <td>{{ attendee.id }}</td>
             <td>{{ attendee.first }}</td>
             <td>{{ attendee.last }}</td>
+            <td><a type="button" class="btn btn-danger btn-center" href="#manageUser/edit/{{attendee.id}}">Edit</a></td>
         </tr>
     </table>
-    <button type="button" class="btn btn-primary btn-center" ng-click="addUserPage()">Add User</button>
+    <button type="button" class="btn btn-primary btn-center" ng-click="manageUserPage()">Add User</button>
 </div>

@@ -11,6 +11,14 @@ app.service('attendeeService', function () {
     attendees.push(newObj);
   };
 
+  var updateAttendee = function (newObj) {
+    for (i = 0; i < attendees.length; i++) {
+      if (attendees[i].id == newObj.id) {
+        attendees[i] = newObj;
+      }
+    }
+  };
+
   var getAttendees = function () {
     return attendees;
   };

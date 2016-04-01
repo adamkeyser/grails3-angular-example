@@ -25,7 +25,7 @@
 
   <div ng-view></div>
 
-  <footer class="text-center">
+  <footer class="jumbotron text-center">
     <p>Footer Content</p>
   </footer>
 
