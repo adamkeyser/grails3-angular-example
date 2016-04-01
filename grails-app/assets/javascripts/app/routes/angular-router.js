@@ -1,18 +1,21 @@
-	angular.module("app").config(function($routeProvider) {
-		$routeProvider
-
-			.when('/home', {
-				templateUrl : 'angular-router/partials/home.html',
-				controller  : 'mainController'
-			})
-
-			.when('/about', {
-				templateUrl : 'angular-router/partials/about.html',
-				controller  : 'aboutController'
-			})
-
-			.when('/contact', {
-				templateUrl : 'angular-router/partials/contact.html',
-				controller  : 'contactController'
-			});
-	});
+app.config(function ($routeProvider) {
+  $routeProvider
+    .when('/home', {
+      templateUrl: 'angular-router/partials/home.html',
+      controller: 'mainController'
+    })
+    .when('/about', {
+      templateUrl: 'angular-router/partials/about.html',
+      controller: 'aboutController'
+    })
+    .when('/contact', {
+      templateUrl: 'angular-router/partials/contact.html',
+      controller: 'contactController'
+    })
+    .when('/addUser', {
+      templateUrl: 'angular-router/partials/addUser.html'
+    })
+    .otherwise({
+      redirectTo: '/home'
+    });
+});

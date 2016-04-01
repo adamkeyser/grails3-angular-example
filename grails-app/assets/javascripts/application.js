@@ -26,7 +26,6 @@ if (typeof jQuery !== 'undefined') {
 
 var app = angular.module('app', ["ngRoute"]);
 
-
 app.run(['$route', '$rootScope', '$location', function ($route, $rootScope, $location) {
     var original = $location.path;
     $location.path = function (path, reload) {
@@ -39,4 +38,4 @@ app.run(['$route', '$rootScope', '$location', function ($route, $rootScope, $loc
         }
         return original.apply($location, [path]);
     };
-}])
+}]);

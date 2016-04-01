@@ -12,7 +12,7 @@
   <nav class="navbar navbar-default">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand" href="/">Angular Routing Example</a>
+        <a class="navbar-brand" href="/">MSSE Angular Routing</a>
       </div>
 
       <ul class="nav navbar-nav navbar-right">

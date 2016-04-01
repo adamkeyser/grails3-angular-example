@@ -1,5 +1,13 @@
-<div class="jumbotron text-center">
-    <h1>Contact Page</h1>
 
-    <p>{{ message }}</p>
+<div class="container text-center well">
+    <h1>Party Planning Redux</h1>
+    <br/>
+    <table class="table">
+        <tr ng-repeat="attendee in attendees">
+            <td>{{ attendee.id }}</td>
+            <td>{{ attendee.first }}</td>
+            <td>{{ attendee.last }}</td>
+        </tr>
+    </table>
+    <button type="button" class="btn btn-primary btn-center" ng-click="addUserPage()">Add User</button>
 </div>

@@ -1,23 +1,36 @@
+app.controller('headerController', function ($scope, $location) {
+  $scope.message = 'I manage the header, meaning the nav tabs';
+  $scope.isActive = function (viewLocation) {
+    return viewLocation == $location.path();
+  };
+});
 
-		angular.module('app').controller('headerController', function($scope, $location, $route) {
-  		$scope.message = 'Everyone come and see how good I look!';
-  		$scope.isActive = function(viewLocation) {
-  		return viewLocation == $location.path();
-  		};
+app.controller('mainController', function ($scope, $location, attendeeService) {
+  $scope.message = 'Default Routed Page (Home)';
+  $scope.toggle = false;
+  $scope.attendees = attendeeService.getAttendees();
+  $scope.addUserPage = function() {
+    $location.path("/addUser");
+  }
+});
 
-  	});
+app.controller('aboutController', function ($scope) {
+  $scope.message = 'About Page';
+});
 
+app.controller('contactController', function ($scope) {
+  $scope.message = 'Contact Us';
+});
 
-	angular.module('app').controller('mainController', function($scope) {
-		$scope.message = 'Everyone come and see how good I look!';
-		$scope.toggle = false;
+app.controller('addUserController', function ($scope, $location, attendeeService) {
+  $scope.attendee = {};
+  $scope.saveCurrentAttendee = function() {
+    attendeeService.addAttendee($scope.attendee);
+    attendeeService.attendee = {};
+  };
+  $scope.message = 'Wire up controller in html (Not really good practice)';
 
-	});
-
-	angular.module('app').controller('aboutController', function($scope) {
-		$scope.message = 'Look! I am an about page.';
-	});
-
-	angular.module('app').controller('contactController', function($scope) {
-		$scope.message = 'Contact us! JK. This is just a demo.';
-	});
+  $scope.return = function() {
+    $location.path("/home");
+  };
+});
