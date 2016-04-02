@@ -56,7 +56,7 @@ app.controller('attendeeController', function ($scope, $location, $state, $state
   $scope.message = 'Wire up controller in html (Not really good practice)';
 
   $scope.return = function () {
-    $location.path("/home");
+    $location.path("/home/list");
   };
 });
 
