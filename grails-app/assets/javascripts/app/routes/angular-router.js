@@ -12,8 +12,8 @@ app.config(function ($routeProvider) {
       templateUrl: 'angular-router/partials/contact.html',
       controller: 'contactController'
     })
-    .when('/manageUser/:action?/:id?', {
-      templateUrl: 'angular-router/partials/manageUser.html'
+    .when('/attendee/:action?/:id?', {
+      templateUrl: 'angular-router/partials/attendee.html'
     })
     .otherwise({
       redirectTo: '/home'

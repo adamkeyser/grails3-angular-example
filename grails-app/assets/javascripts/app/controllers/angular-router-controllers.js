@@ -9,8 +9,8 @@ app.controller('mainController', function ($scope, $location, attendeeService) {
   $scope.message = 'Default Routed Page (Home)';
   $scope.toggle = true;
   $scope.attendees = attendeeService.getAttendees();
-  $scope.manageUserPage = function () {
-    $location.path("/manageUser");
+  $scope.attendeePage = function () {
+    $location.path("/attendee");
   };
 
   $scope.deleteAttendee = function (id) {
@@ -26,7 +26,7 @@ app.controller('contactController', function ($scope) {
   $scope.message = 'Contact Us';
 });
 
-app.controller('manageUserController', function ($scope, $location, $routeParams, attendeeService) {
+app.controller('attendeeController', function ($scope, $location, $routeParams, attendeeService) {
   $scope.attendee = {};
   $scope.mode = 'Add';
   if ('edit' == $routeParams.action) {
