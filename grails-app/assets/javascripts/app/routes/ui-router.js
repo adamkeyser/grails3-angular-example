@@ -15,12 +15,12 @@ app.config(function($stateProvider){
     .state('home.list.edit', {
       url: '/edit/:id',
       templateUrl: 'ui-router/partials/home.list.edit.html',
-      controller: 'manageUserController'
+      controller: 'attendeeController'
     })
     .state('home.list.add', {
       url: '/add',
       templateUrl: 'ui-router/partials/home.list.add.html',
-      controller: 'manageUserController'
+      controller: 'attendeeController'
     })
     .state('about', {
       url: '/about',

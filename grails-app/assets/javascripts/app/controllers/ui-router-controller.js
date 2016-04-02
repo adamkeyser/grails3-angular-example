@@ -26,7 +26,7 @@ app.controller('contactController', function ($scope) {
   $scope.message = 'party.planning@allday.com';
 });
 
-app.controller('manageUserController', function ($scope, $location, $state, $stateParams, attendeeService) {
+app.controller('attendeeController', function ($scope, $location, $state, $stateParams, attendeeService) {
   $scope.attendee = {};
   $scope.mode = 'Add';
 
