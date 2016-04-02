@@ -57,39 +57,6 @@ app.controller('manageUserController', function ($scope, $location, $state, $sta
 
   $scope.return = function () {
     $location.path("/home");
-  };});
-
-});
-
-app.controller('manageUserControllerRouter', function ($scope, $location, $routeParams, attendeeService) {
-  $scope.attendee = {};
-  $scope.mode = 'Add';
-  if ('edit' == $routeParams.action) {
-    $scope.mode = 'Edit';
-    var id = $routeParams.id;
-    var attendees = attendeeService.getAttendees();
-    for (i = 0; i < attendees.length; i++) {
-      if (attendees[i].id == id) {
-        $scope.attendee = attendees[i];
-      }
-    }
-  }
-
-  $scope.saveCurrentAttendee = function () {
-    if ($scope.attendee.first && $scope.attendee.last) {
-      if ($scope.attendee.id) {
-        attendeeService.updateAttendee($scope.attendee);
-      } else {
-        attendeeService.addAttendee($scope.attendee);
-      }
-      attendeeService.attendee = {};
-      $location.path("/home");
-    }
-  };
-
-  $scope.message = 'Wire up controller in html (Not really good practice)';
-
-  $scope.return = function () {
-    $location.path("/home");
   };
 });
+
