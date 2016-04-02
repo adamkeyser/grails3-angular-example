@@ -1,13 +1,11 @@
 app.service('attendeeService', function () {
-  var id = 2;
-
   var attendees = [
     {id: 1, first: 'ted', last: 'johnson'},
     {id: 2, first: 'dale', last: 'keith'}
   ];
 
   var addAttendee = function (newObj) {
-    newObj.id = ++id;
+    newObj.id = attendees.length + 1;
     attendees.push(newObj);
   };
 

@@ -19,11 +19,11 @@ app.controller('mainController', function ($scope, $location, attendeeService) {
 });
 
 app.controller('aboutController', function ($scope) {
-  $scope.message = 'About Page';
+  $scope.message = 'We plan parties';
 });
 
 app.controller('contactController', function ($scope) {
-  $scope.message = 'Contact Us';
+  $scope.message = 'party.planning@allday.com';
 });
 
 app.controller('manageUserController', function ($scope, $location, $state, $stateParams, attendeeService) {

@@ -90,10 +90,6 @@ bower {
     excludes 'jquery'
   }
 
-  'angular-route'('1.5.x') {
-    source 'angular-route.js'
-  }
-
   'ui-router'('0.2.x')
 
   'angular'('1.5.x') {
